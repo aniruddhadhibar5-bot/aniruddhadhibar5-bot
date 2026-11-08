@@ -1,20 +1,16 @@
 ![Animated header](https://capsule-render.vercel.app/api?type=waving&color=0:070B1A,50:172554,100:312E81&height=180&section=header&animation=fadeIn)
 
-<p align="center">
-  <img src="https://github.com/aniruddhadhibar5-bot.png" width="132" alt="Aniruddha Dhibar profile photo">
-</p>
+<p align="center"><img src="https://github.com/aniruddhadhibar5-bot.png" width="132" alt="Aniruddha Dhibar profile photo"></p>
 
 <h1 align="center">Aniruddha Dhibar</h1>
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=2800&pause=900&color=7C9CFF&center=true&vCenter=true&width=620&lines=Data+Scientist+%7C+Software+Engineer;ML+%26+Systems+Builder" alt="Data Scientist | Software Engineer | ML and Systems Builder">
-</p>
+<p align="center"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=2800&pause=900&color=7C9CFF&center=true&vCenter=true&width=620&lines=Data+Scientist+%7C+Software+Engineer;ML+%26+Systems+Builder" alt="Data Scientist | Software Engineer | ML and Systems Builder"></p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/aniruddha-dhibar-00b631343"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://github.com/aniruddhadhibar5-bot"><img src="https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
-  <a href="mailto:YOUR_EMAIL@example.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://YOUR_PORTFOLIO_URL"><img src="https://img.shields.io/badge/Portfolio-Explore-7C3AED?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"></a>
+<a href="https://www.linkedin.com/in/aniruddha-dhibar-00b631343"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://github.com/aniruddhadhibar5-bot"><img src="https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"></a>
+<a href="mailto:YOUR_EMAIL@example.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
+<a href="https://YOUR_PORTFOLIO_URL"><img src="https://img.shields.io/badge/Portfolio-Explore-7C3AED?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"></a>
 </p>
 
 ---
@@ -53,35 +49,16 @@ I’m Aniruddha Dhibar, a Data Scientist and Software Engineer passionate about 
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white) ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black) ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
 
-### Featured projects
-
-| Project | Focus | Stack | Links |
-|---|---|---|---|
-| **[ML project name]** | Data science or machine learning application | Python · Pandas · scikit-learn | [Repository](https://github.com/aniruddhadhibar5-bot/REPLACE_WITH_REPO) · [Demo](https://REPLACE_WITH_DEMO) |
-| **[Systems tool name]** | Reliable backend, CLI, or developer tool | Go or Rust · Docker | [Repository](https://github.com/aniruddhadhibar5-bot/REPLACE_WITH_REPO) · [Demo](https://REPLACE_WITH_DEMO) |
-| **[Data dashboard name]** | Interactive data visualization and exploration | TypeScript · React · SQL | [Repository](https://github.com/aniruddhadhibar5-bot/REPLACE_WITH_REPO) · [Demo](https://REPLACE_WITH_DEMO) |
-| **[Mobile app name]** | Thoughtful mobile app for a useful workflow | Swift or Flutter · Firebase | [Repository](https://github.com/aniruddhadhibar5-bot/REPLACE_WITH_REPO) · [Demo](https://REPLACE_WITH_DEMO) |
-
 ### GitHub activity
 
 <!-- Dynamic stats cards. -->
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=aniruddhadhibar5-bot&show_icons=true&hide_border=true&bg_color=00000000&title_color=7C9CFF&text_color=C9D1D9&icon_color=22D3EE" alt="GitHub stats">
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aniruddhadhibar5-bot&layout=compact&langs_count=8&hide_border=true&bg_color=00000000&title_color=7C9CFF&text_color=C9D1D9" alt="Top languages">
-</p>
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=aniruddhadhibar5-bot&hide_border=true&background=00000000&ring=7C3AED&fire=22D3EE&currStreakLabel=7C9CFF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub streak">
-</p>
+<p align="center"><img src="https://github-readme-stats.vercel.app/api?username=aniruddhadhibar5-bot&show_icons=true&hide_border=true&bg_color=00000000&title_color=7C9CFF&text_color=C9D1D9&icon_color=22D3EE" alt="GitHub stats"></p>
+<p align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aniruddhadhibar5-bot&layout=compact&langs_count=8&hide_border=true&bg_color=00000000&title_color=7C9CFF&text_color=C9D1D9" alt="Top languages"></p>
+<p align="center"><img src="https://streak-stats.demolab.com?user=aniruddhadhibar5-bot&hide_border=true&background=00000000&ring=7C3AED&fire=22D3EE&currStreakLabel=7C9CFF&sideLabels=C9D1D9&dates=8B949E" alt="GitHub streak"></p>
 
 <!-- Generated by .github/workflows/snake.yml and published to the output branch. -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/aniruddhadhibar5-bot/aniruddhadhibar5-bot/output/github-contribution-grid-snake-dark.svg" alt="Animated GitHub contribution graph">
-</p>
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=aniruddhadhibar5-bot&bg_color=0d1117&color=C9D1D9&line=7C3AED&point=22D3EE&area=true&hide_border=true" alt="GitHub activity graph">
-</p>
+<p align="center"><img src="https://raw.githubusercontent.com/aniruddhadhibar5-bot/aniruddhadhibar5-bot/output/github-contribution-grid-snake-dark.svg" alt="Animated GitHub contribution graph"></p>
+<p align="center"><img src="https://github-readme-activity-graph.vercel.app/graph?username=aniruddhadhibar5-bot&bg_color=0d1117&color=C9D1D9&line=7C3AED&point=22D3EE&area=true&hide_border=true" alt="GitHub activity graph"></p>
 
 ---
 
