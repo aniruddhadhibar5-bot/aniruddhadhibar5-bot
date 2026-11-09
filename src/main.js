@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { createBoard } from './scene/createBoard.js';
+import { createBoard } from './scene/createBoard.js?v=3fc8087';
 import { SequenceController } from './animation/SequenceController.js';
 
 const $ = (selector) => document.querySelector(selector);
