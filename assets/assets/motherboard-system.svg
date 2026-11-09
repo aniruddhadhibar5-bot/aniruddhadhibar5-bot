@@ -1,92 +1,161 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-<title id="title">AD Systems Lab — animated motherboard</title>
-<desc id="desc">A detailed isometric ATX motherboard with layered PCB, copper signal traces, processor socket, DIMM memory, VRM cooling, PCIe slot, connectors and animated live diagnostics.</desc>
+<title id="title">AD // Autonomous Motherboard</title>
+<desc id="desc">A large cinematic isometric motherboard animation. The board gently rotates while its processor, memory, heatsinks and PCI Express module lift into an exploded diagnostic view, pause, then automatically reassemble.</desc>
 <defs>
-<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#050814"/><stop offset=".55" stop-color="#0a1430"/><stop offset="1" stop-color="#101b3a"/></linearGradient>
-<linearGradient id="pcb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#174c59"/><stop offset=".45" stop-color="#123849"/><stop offset="1" stop-color="#09182a"/></linearGradient>
-<linearGradient id="metal" x2="1" y2="1"><stop stop-color="#e0fbff"/><stop offset=".3" stop-color="#789ab2"/><stop offset=".7" stop-color="#263d5a"/><stop offset="1" stop-color="#101729"/></linearGradient>
-<linearGradient id="neon" x2="1" y2="1"><stop stop-color="#35e5f4"/><stop offset=".5" stop-color="#586fff"/><stop offset="1" stop-color="#ce50ff"/></linearGradient>
-<linearGradient id="gold" x2="1" y2="1"><stop stop-color="#fff0ad"/><stop offset=".5" stop-color="#c99a45"/><stop offset="1" stop-color="#654425"/></linearGradient>
-<radialGradient id="chip"><stop stop-color="#273551"/><stop offset=".7" stop-color="#0b1222"/><stop offset="1" stop-color="#b782ef"/></radialGradient>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#80c9ed" stroke-opacity=".055"/></pattern>
-<pattern id="pins" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.2" fill="#d5b56d" opacity=".8"/></pattern>
-<filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="12"/></filter>
-<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-<style>
-.label{font:11px Consolas,monospace;letter-spacing:2px;fill:#9eb8d0}.micro{font:8px Consolas,monospace;letter-spacing:1.2px;fill:#78a6be}
-.trace{fill:none;stroke:#42d7de;stroke-opacity:.48;stroke-width:2}.trace2{fill:none;stroke:#bd72fa;stroke-opacity:.4;stroke-width:1.5}
-.pulse{animation:pulse 1.8s ease-in-out infinite}.pulse2{animation:pulse 2.6s ease-in-out infinite .7s}.signal{stroke-dasharray:12 26;animation:signal 4s linear infinite}
-.float{animation:float 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}@keyframes signal{to{stroke-dashoffset:-152}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-@media(prefers-reduced-motion:reduce){.pulse,.pulse2,.signal,.float{animation:none}}
-</style>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050814"/><stop offset=".52" stop-color="#09142c"/><stop offset="1" stop-color="#101c3b"/></linearGradient>
+  <linearGradient id="pcb" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#1d5961"/><stop offset=".28" stop-color="#164452"/><stop offset=".68" stop-color="#102c3d"/><stop offset="1" stop-color="#0a1729"/></linearGradient>
+  <linearGradient id="edge" x2="0" y2="1"><stop stop-color="#28475c"/><stop offset="1" stop-color="#050a14"/></linearGradient>
+  <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4faff"/><stop offset=".22" stop-color="#8eb2c8"/><stop offset=".55" stop-color="#405d77"/><stop offset="1" stop-color="#15243a"/></linearGradient>
+  <linearGradient id="cyan" x2="1" y2="1"><stop stop-color="#48f4f2"/><stop offset=".5" stop-color="#39a8df"/><stop offset="1" stop-color="#8072ff"/></linearGradient>
+  <linearGradient id="violet" x2="1" y2="1"><stop stop-color="#59d9f4"/><stop offset=".5" stop-color="#756aff"/><stop offset="1" stop-color="#d85aff"/></linearGradient>
+  <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#fff1b7"/><stop offset=".5" stop-color="#d2a856"/><stop offset="1" stop-color="#80532b"/></linearGradient>
+  <radialGradient id="silicon"><stop stop-color="#263550"/><stop offset=".7" stop-color="#0b1222"/><stop offset="1" stop-color="#c27aff"/></radialGradient>
+  <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#80c9ed" stroke-opacity=".055"/></pattern>
+  <pattern id="pins" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.2" fill="#dfc77b" opacity=".8"/></pattern>
+  <filter id="shadow" x="-30%" y="-30%" width="170%" height="190%"><feGaussianBlur stdDeviation="17"/></filter>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <style>
+    .tiny{font:9px Consolas,monospace;letter-spacing:1.6px;fill:#8eabc3}
+    .trace{fill:none;stroke:#42d7de;stroke-opacity:.5;stroke-width:2}
+    .traceFine{fill:none;stroke:#c183ff;stroke-opacity:.35;stroke-width:1.4}
+    .pulse{animation:pulse 2s ease-in-out infinite}
+    .pulseLate{animation:pulse 2.4s ease-in-out infinite .8s}
+    @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.pulse,.pulseLate{animation:none}}
+  </style>
 </defs>
-<rect width="1200" height="760" rx="28" fill="url(#bg)"/><rect width="1200" height="760" rx="28" fill="url(#grid)"/>
-<path d="M0 590 1200 350M0 690 1200 450" stroke="#4ccde8" stroke-opacity=".035"/>
-<text x="58" y="62" fill="#dff8ff" font-family="monospace" font-size="17" letter-spacing="5">AD <tspan fill="#58e3f4">//</tspan> SYSTEMS LAB</text>
-<text x="1142" y="62" text-anchor="end" class="micro">HARDWARE STUDY 001 / ATX PLATFORM</text>
-<circle cx="1136" cy="92" r="4" fill="#55f3d0" class="pulse"/><text x="1124" y="96" text-anchor="end" class="micro">SYSTEM ONLINE</text>
-<!-- Substrate, beveled FR-4 edge and copper surface -->
-<path d="m155 238 535-104 365 204-536 128z" fill="#000" opacity=".58" filter="url(#shadow)"/>
-<path d="m147 232 535-104 369 207-536 130z" fill="#06101d" stroke="#203c53" stroke-width="3"/>
-<path d="m147 218 535-104 369 207-536 130z" fill="url(#pcb)" stroke="#43d7e8" stroke-opacity=".8" stroke-width="2.5"/>
-<path d="m168 221 512-99 348 195-513 122z" fill="url(#grid)" stroke="#86eaff" stroke-opacity=".24"/>
-<!-- Multilayer signal routing, branches, and flowing diagnostic signal -->
-<g class="trace"><path d="m186 266 104-20 30 17 58-11 38 22 80-16 30 17 48-9"/><path d="m204 302 125-24 34 19 75-14 40 23 93-18 40 23 110-21"/><path d="m247 345 112-22 28 16 70-13 34 20 57-11"/><path d="m414 162 25 48 53 30 11 35"/><path d="m358 181 28 46-12 55 38 22"/><path d="m624 152 6 46 49 28 9 44"/><path d="m837 208-30 54-84 16-27 49"/><path d="m899 265-51 9-27 47-55 10"/><path d="m304 372 90-18 22 13 61-12"/></g>
-<g class="trace2"><path d="m209 250 78-15 24 14 33-7"/><path d="m268 325 53-10 29 17 42-8"/><path d="m579 177 18 34 39 22 3 26"/><path d="m744 183 24 41-15 28 53 29"/><path d="m882 300-54 10-17 30-45 9"/><path d="m497 364 42-8 22 13 42-8"/></g>
-<g class="signal" fill="none" stroke="#c2fbff" stroke-opacity=".82" stroke-width="2"><path d="m186 266 104-20 30 17 58-11 38 22 80-16"/><path d="m624 152 6 46 49 28 9 44"/></g>
-<!-- Mounting points, via rings, and exposed gold contacts -->
-<g fill="#10243a" stroke="#7fe9f3" stroke-width="1.5"><circle cx="177" cy="220" r="8"/><circle cx="680" cy="120" r="8"/><circle cx="1037" cy="319" r="8"/><circle cx="516" cy="437" r="8"/><circle cx="300" cy="292" r="3"/><circle cx="373" cy="344" r="3"/><circle cx="749" cy="252" r="3"/><circle cx="880" cy="294" r="3"/><circle cx="598" cy="365" r="3"/></g>
-<g fill="#d8c17b"><circle cx="177" cy="220" r="3"/><circle cx="680" cy="120" r="3"/><circle cx="1037" cy="319" r="3"/><circle cx="516" cy="437" r="3"/></g>
-<g fill="#c9a95e"><circle cx="251" cy="274" r="2"/><circle cx="265" cy="271" r="2"/><circle cx="279" cy="268" r="2"/><circle cx="354" cy="300" r="2"/><circle cx="367" cy="298" r="2"/><circle cx="380" cy="296" r="2"/><circle cx="741" cy="320" r="2"/><circle cx="755" cy="317" r="2"/><circle cx="769" cy="314" r="2"/><circle cx="931" cy="281" r="2"/><circle cx="945" cy="278" r="2"/></g>
-<!-- Rear I/O shield and stacked connector ports -->
-<g><path d="m180 222 47-9 12 7-47 10z" fill="#111c2c" stroke="#7395a9"/><path d="m187 221 16-3 7 4-16 3z" fill="#070d18" stroke="#44dff2"/><path d="m211 217 12-2 7 4-12 2z" fill="#070d18" stroke="#d58bff"/><path d="m194 233 28-5 10 6-29 6z" fill="#131c2a" stroke="#7f9caf"/><circle cx="202" cy="235" r="2" fill="#55e7ef" class="pulse"/><circle cx="213" cy="233" r="2" fill="#f0b968"/><text x="173" y="254" class="micro">REAR I/O</text></g>
-<!-- VRM bank, inductors, capacitors and sculpted multi-fin heatsink -->
-<g><path d="m255 246 100-20 48 27-100 20z" fill="#060b17" stroke="#253b54" stroke-width="2"/>
-<g fill="url(#metal)" stroke="#b6dbea"><path d="m262 238 25-5 17 10-25 5z"/><path d="m295 231 25-5 17 10-25 5z"/><path d="m328 225 25-5 17 10-25 5z"/><path d="m275 255 20-4 14 8-20 4z"/><path d="m310 248 20-4 14 8-20 4z"/></g>
-<g fill="#101927" stroke="#b4cad8"><ellipse cx="270" cy="232" rx="5" ry="3"/><ellipse cx="290" cy="245" rx="5" ry="3"/><ellipse cx="335" cy="220" rx="5" ry="3"/></g>
-<g class="float"><path d="m256 218 103-20 49 27-103 21z" fill="#101a31" stroke="#6e91b1" stroke-width="2"/><path d="m266 210 88-17 43 24-89 18z" fill="url(#neon)" stroke="#bcf8ff" stroke-opacity=".8"/><path d="m276 207 8-20 7 19m6-22 7 19m7-22 7 19m7-22 7 19m7-22 7 19m7-22 7 19" fill="none" stroke="#d2f7ff" stroke-width="4" stroke-linecap="round"/></g>
-<text x="260" y="285" class="micro">VRM / 12-PHASE POWER</text></g>
-<!-- LGA processor socket, pin matrix, metal load plate and silicon package -->
-<g><path d="m412 198 174-34 105 59-174 35z" fill="#030712" stroke="#7b56ae" stroke-width="3" filter="url(#glow)"/>
-<path d="m420 194 161-31 94 53-161 32z" fill="url(#metal)" stroke="#d4f7ff" stroke-width="2"/>
-<path d="m432 194 144-28 79 45-144 29z" fill="url(#pins)" stroke="#334c68" stroke-width="2"/>
-<path d="m451 192 108-21 59 33-109 22z" fill="#090f1d" stroke="#8aacc3" stroke-width="3"/>
-<path d="m463 190 96-18 45 26-96 19z" fill="url(#chip)" stroke="#b898f4" stroke-width="2"/>
-<path d="m476 190 73-14 33 19-74 15z" fill="#151d32" stroke="#5bdff3" stroke-opacity=".9"/>
-<text x="513" y="199" text-anchor="middle" fill="#e6f4ff" font-family="monospace" font-size="8" letter-spacing="1" transform="rotate(-10 513 199)">AD / CORE</text>
-<path d="m430 189-8-7 11-4 8 7m151-29 11-7 9 7-11 7" fill="none" stroke="#e9c777" stroke-width="3"/><path d="m444 240 7 4m159-57 7 4" stroke="#9beef3" stroke-width="2"/>
-<text x="471" y="278" class="micro">LGA SOCKET / COMPUTE</text></g>
-<!-- Four DIMM slots with contact fingers and locking latches -->
-<g><path d="m690 173 25-5 82 46-25 5z" fill="#070d17" stroke="#7196a9" stroke-width="2"/><path d="m704 167 20-4 80 45-21 4z" fill="#101b2c" stroke="#51ddea" stroke-width="1.5"/>
-<path d="m718 152 20-4 80 45-21 4z" fill="#101b2c" stroke="#ce7cff" stroke-width="1.5"/><path d="m732 137 20-4 80 45-21 4z" fill="#101b2c" stroke="#51ddea" stroke-width="1.5"/><path d="m746 122 20-4 80 45-21 4z" fill="#101b2c" stroke="#ce7cff" stroke-width="1.5"/>
-<g stroke="#d6c17d" stroke-width="2"><path d="m711 172 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7"/><path d="m725 157 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7"/><path d="m739 142 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7"/></g>
-<g fill="#a9efff"><path d="m697 172 10-2 5 6-10 2z"/><path d="m801 227 10-2 5 6-10 2z"/><path d="m711 157 10-2 5 6-10 2z"/><path d="m815 212 10-2 5 6-10 2z"/></g>
-<text x="761" y="253" class="micro" transform="rotate(29 761 253)">DDR / CHANNEL A+B</text></g>
-<!-- Aluminum capacitors and southbridge chipset -->
-<g fill="#121d2b" stroke="#9bb5c3" stroke-width="1.5"><path d="m381 260v20l16-3v-20"/><ellipse cx="389" cy="257" rx="8" ry="5" fill="url(#metal)"/><path d="m393 282v18l14-3v-18"/><ellipse cx="400" cy="279" rx="7" ry="4" fill="url(#metal)"/><path d="m657 274v20l16-3v-20"/><ellipse cx="665" cy="271" rx="8" ry="5" fill="url(#metal)"/></g>
-<path d="m735 278 76-15 55 31-76 15z" fill="#08101d" stroke="#52728a" stroke-width="2"/><path d="m750 278 47-9 31 18-48 9z" fill="#172536" stroke="#5ce4ef"/><path d="m759 279 30-6 19 11-30 6z" fill="#0a1020" stroke="#8663d2"/><text x="785" y="325" text-anchor="middle" class="micro">PCH / CHIPSET</text>
-<!-- Reinforced PCIe x16 slot with gold edge fingers -->
-<g><path d="m343 324 326-63 25 14-326 64z" fill="#030811" stroke="#475f76" stroke-width="2"/><path d="m357 322 296-57 11 6-296 58z" fill="#141c29" stroke="#7e9bac"/><path d="m368 321 278-54 5 3-278 55z" fill="url(#gold)"/>
-<path d="m385 314 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9m15-13 5 9" stroke="#342b24" stroke-width="2"/>
-<path d="m677 267 18 10-12 2-17-10z" fill="#e5c779" stroke="#fff0b0"/><text x="481" y="353" class="micro">PCI EXPRESS / X16</text></g>
-<!-- SATA, fan, USB, power and front-panel headers -->
-<g fill="#111c2b" stroke="#8aa9b9" stroke-width="1.5"><path d="m825 337 37-7 21 12-37 8z"/><path d="m833 336 22-4 12 7-22 4z" fill="#050a13" stroke="#56d9e8"/><path d="m870 328 37-7 21 12-37 8z"/><path d="m878 327 22-4 12 7-22 4z" fill="#050a13" stroke="#56d9e8"/><path d="m263 344 36-7 20 11-36 8z"/><path d="m275 344 14-3 11 6-14 3z" fill="#070d17" stroke="#d4b366"/><path d="m584 379 46-9 25 14-46 9z"/><path d="m595 378 27-5 14 8-27 6z" fill="#080e18" stroke="#58dae9"/><path d="m925 287 45-9 26 15-46 9z" fill="#17202d" stroke="#899eaf"/></g>
-<text x="834" y="374" class="micro">SATA / STORAGE</text><text x="276" y="372" class="micro">FAN / SYS</text>
-<!-- Audio codecs and controller packages -->
-<g><path d="m740 351 64-12 38 21-64 13z" fill="#101827" stroke="#6a8093"/><g fill="#263447" stroke="#93a9b5"><path d="m749 347 12-2 3 8-12 2z"/><path d="m769 343 12-2 3 8-12 2z"/><path d="m789 340 12-2 3 8-12 2z"/></g><text x="772" y="395" class="micro">POWER / AUDIO</text></g>
-<!-- Diagnostic LEDs and reflected neon -->
-<circle cx="303" cy="312" r="13" fill="#29d5e8" opacity=".16" filter="url(#glow)"/><circle cx="303" cy="312" r="4" fill="#5df3ef" filter="url(#glow)" class="pulse"/>
-<circle cx="919" cy="304" r="12" fill="#bd62ff" opacity=".16" filter="url(#glow)"/><circle cx="919" cy="304" r="3.5" fill="#df84ff" filter="url(#glow)" class="pulse2"/><circle cx="650" cy="345" r="3" fill="#ffbf68" class="pulse"/>
-<!-- Fine callouts identify the major subsystems -->
-<g class="micro"><text x="224" y="190">01 / IO SHIELD</text><text x="348" y="178">02 / POWER STAGE</text><text x="483" y="150">03 / PROCESSOR</text><text x="774" y="130">04 / MEMORY</text><text x="877" y="250">05 / EXPANSION</text></g>
-<g fill="none" stroke="#78ddeb" stroke-opacity=".42"><path d="m245 194 15 13"/><path d="m391 182 22 15"/><path d="m531 153 6 13"/><path d="m816 134-15 21"/><path d="m907 254-23 13"/></g>
-<!-- Dashboard-like board telemetry -->
-<path d="M58 535H1142" stroke="#58d8eb" stroke-opacity=".34"/>
-<text x="58" y="574" fill="#e4f6ff" font-family="monospace" font-size="17" letter-spacing="4">MOTHERBOARD / SYSTEM MAP</text>
-<text x="58" y="601" class="micro">POWER DELIVERY · COMPUTE · MEMORY · EXPANSION · CONNECTIVITY</text>
-<circle cx="63" cy="641" r="4" fill="#5df3d0" class="pulse"/><text x="76" y="645" class="micro">LIVE SIGNAL PATHS</text><circle cx="253" cy="641" r="4" fill="#d5a5ff"/><text x="266" y="645" class="micro">COMPONENT DIAGNOSTIC</text>
-<text x="1142" y="646" text-anchor="end" fill="#70e4f2" font-family="monospace" font-size="13" letter-spacing="2">SEPARATE / INSPECT / REASSEMBLE</text>
-<text x="1142" y="673" text-anchor="end" class="micro">OPEN THE INTERACTIVE 3D SYSTEM LAB ↗</text><path d="M58 699H1142" stroke="#7c9db8" stroke-opacity=".18"/>
-<text x="58" y="728" class="micro">DESIGNED BY ANIRUDDHA DHIBAR / INTELLIGENT SYSTEMS, BUILT LAYER BY LAYER</text><text x="1142" y="728" text-anchor="end" class="micro">AD // 001</text>
+<!-- Deep observatory backdrop -->
+<rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+<rect width="1200" height="760" rx="28" fill="url(#grid)"/>
+<circle cx="598" cy="300" r="330" fill="#1c7d9a" opacity=".055"/>
+<circle cx="598" cy="300" r="260" fill="none" stroke="#4ccde8" stroke-opacity=".09" stroke-dasharray="2 13"/>
+<path d="M55 92H1145" stroke="#65d9ee" stroke-opacity=".25"/>
+<text x="58" y="58" fill="#ecfaff" font-family="monospace" font-size="17" letter-spacing="5">AD <tspan fill="#58e3f4">//</tspan> SYSTEMS LAB</text>
+<text x="1142" y="56" text-anchor="end" class="tiny">AUTONOMOUS HARDWARE STUDY / 001</text>
+<circle cx="1126" cy="74" r="4" fill="#5af0c5" class="pulse"/>
+<text x="1142" y="78" text-anchor="end" class="tiny">ROTATION + SELF-ASSEMBLY ONLINE</text>
+<!-- The complete board makes a slow, restrained orbit while components move independently. -->
+<g id="motherboard-orbit">
+  <animateTransform attributeName="transform" type="rotate" values="-2 602 300;2 602 300;-2 602 300" dur="6s" repeatCount="indefinite"/>
+  <!-- Cast shadow, layered FR-4 edge and main PCB -->
+  <path d="m135 242 548-110 397 222-550 139z" fill="#000" opacity=".62" filter="url(#shadow)"/>
+  <path d="m135 228 548-110 397 222-550 139z" fill="url(#edge)" stroke="#20384f" stroke-width="3"/>
+  <path d="m135 211 548-110 397 222-550 139z" fill="url(#pcb)" stroke="#60e6f4" stroke-opacity=".82" stroke-width="3"/>
+  <path d="m157 215 525-105 374 208-527 132z" fill="url(#grid)" stroke="#9beaf6" stroke-opacity=".25"/>
+  <!-- Fine copper routing, branching buses, and board zoning -->
+  <g class="trace">
+    <path d="m170 257 104-21 34 19 64-13 34 20 57-12 34 19 73-15"/>
+    <path d="m202 296 102-21 35 20 79-16 39 22 73-15 44 24 115-24"/>
+    <path d="m232 343 109-23 36 20 63-14 40 22 83-18"/>
+    <path d="m417 150 20 48 52 30 16 42 39 22"/>
+    <path d="m362 177 29 47-8 39 39 22 18 42"/>
+    <path d="m633 139 4 54 43 24 8 42 50 27"/>
+    <path d="m848 204-25 48-86 18-21 43-59 14"/>
+    <path d="m910 273-60 12-29 46-76 16"/>
+    <path d="m294 377 90-19 25 14 67-14 26 15 51-11"/>
+    <path d="m746 364 57-12 26 15 57-12"/>
+  </g>
+  <g class="traceFine">
+    <path d="m183 277 72-15 19 11 35-7"/><path d="m259 326 50-10 30 17 42-9"/>
+    <path d="m567 163 18 36 42 24 6 35"/><path d="m770 189 24 42-14 24 48 27"/>
+    <path d="m890 301-53 11-22 32-52 11"/><path d="m490 385 45-9 22 13 40-9"/>
+  </g>
+  <!-- Through-hole mounts, annular rings, and solder pads -->
+  <g fill="#10243a" stroke="#9af1f3" stroke-width="1.5">
+    <circle cx="165" cy="213" r="9"/><circle cx="680" cy="109" r="9"/><circle cx="1069" cy="323" r="9"/><circle cx="520" cy="455" r="9"/>
+    <circle cx="295" cy="291" r="3"/><circle cx="383" cy="352" r="3"/><circle cx="752" cy="257" r="3"/><circle cx="887" cy="298" r="3"/><circle cx="618" cy="380" r="3"/>
+  </g>
+  <g fill="#f0d182"><circle cx="165" cy="213" r="3.5"/><circle cx="680" cy="109" r="3.5"/><circle cx="1069" cy="323" r="3.5"/><circle cx="520" cy="455" r="3.5"/></g>
+  <g fill="#d2b369"><circle cx="233" cy="260" r="2"/><circle cx="248" cy="257" r="2"/><circle cx="263" cy="254" r="2"/><circle cx="343" cy="309" r="2"/><circle cx="358" cy="306" r="2"/><circle cx="373" cy="303" r="2"/><circle cx="914" cy="294" r="2"/><circle cx="929" cy="291" r="2"/></g>
+  <!-- Rear I/O cluster -->
+  <g>
+    <path d="m169 221 52-11 13 8-53 12z" fill="#111c2c" stroke="#89aabd" stroke-width="2"/>
+    <path d="m178 219 16-3 8 5-16 3z" fill="#040a13" stroke="#5bdff3"/>
+    <path d="m202 214 12-3 8 5-12 3z" fill="#040a13" stroke="#d58bff"/>
+    <path d="m181 234 30-6 10 6-30 7z" fill="#151f30" stroke="#8aaabe"/>
+    <circle cx="190" cy="234" r="2.5" fill="#55e7ef" class="pulse"/>
+    <text x="167" y="259" class="tiny">REAR I/O</text>
+  </g>
+  <!-- VRM power delivery and animated fin-stack heatsink -->
+  <g>
+    <path d="m256 247 103-21 51 29-104 22z" fill="#060b17" stroke="#324b60" stroke-width="2"/>
+    <g fill="url(#steel)" stroke="#bfd9e7" stroke-width="1"><path d="m265 238 23-5 18 10-23 5z"/><path d="m298 231 23-5 18 10-23 5z"/><path d="m331 224 23-5 18 10-23 5z"/><path d="m278 254 20-4 15 9-20 4z"/><path d="m313 247 20-4 15 9-20 4z"/></g>
+    <g fill="#182333" stroke="#c2d5df"><ellipse cx="273" cy="232" rx="6" ry="4"/><ellipse cx="292" cy="246" rx="6" ry="4"/><ellipse cx="337" cy="220" rx="6" ry="4"/></g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -42;0 -42;0 0;0 0" keyTimes="0;.12;.28;.62;.82;1" dur="6s" repeatCount="indefinite"/>
+      <path d="m253 219 106-21 53 29-107 22z" fill="#101a31" stroke="#99d9ee" stroke-width="2"/>
+      <path d="m263 211 91-18 46 25-92 19z" fill="url(#violet)" stroke="#c4f9ff"/>
+      <path d="m273 207 8-20 7 19m6-22 7 19m7-22 7 19m7-22 7 19m7-22 7 19m7-22 7 19m7-22 7 19" fill="none" stroke="#dbfaff" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <text x="255" y="289" class="tiny">12-PHASE VRM / POWER DELIVERY</text>
+  </g>
+  <!-- CPU LGA socket and floating silicon package -->
+  <g>
+    <path d="m409 200 178-36 110 62-179 37z" fill="#030712" stroke="#a36be4" stroke-width="3" filter="url(#glow)"/>
+    <path d="m418 196 161-32 99 56-161 34z" fill="url(#steel)" stroke="#e1faff" stroke-width="2"/>
+    <path d="m430 195 144-29 83 47-145 31z" fill="url(#pins)" stroke="#41566d" stroke-width="2"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -64;0 -64;0 0;0 0" keyTimes="0;.12;.28;.62;.82;1" dur="6s" begin=".18s" repeatCount="indefinite"/>
+      <path d="m449 194 111-22 67 38-112 23z" fill="#09101e" stroke="#94b5cc" stroke-width="3"/>
+      <path d="m462 192 97-19 48 27-98 20z" fill="url(#silicon)" stroke="#d1a2ff" stroke-width="2"/>
+      <path d="m476 191 72-14 34 19-73 15z" fill="#111c31" stroke="#6cf0f1"/>
+      <text x="516" y="201" text-anchor="middle" fill="#e6f7ff" font-family="monospace" font-size="9" letter-spacing="1" transform="rotate(-10 516 201)">AD / CORE</text>
+    </g>
+    <path d="m428 189-8-7 12-4 8 7m149-30 11-7 10 7-11 7" fill="none" stroke="#f1d080" stroke-width="3"/>
+    <text x="463" y="282" class="tiny">LGA SOCKET / COMPUTE</text>
+  </g>
+  <!-- Four DIMM slots. Memory modules lift clear of their socket during the cycle. -->
+  <g>
+    <path d="m694 177 26-5 86 48-27 6z" fill="#080e18" stroke="#8aaabd" stroke-width="2"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -72;0 -72;0 0;0 0" keyTimes="0;.12;.28;.62;.82;1" dur="6s" begin=".36s" repeatCount="indefinite"/>
+      <path d="m704 166 20-4 82 46-21 5z" fill="#121e31" stroke="#57e6f2" stroke-width="1.5"/>
+      <path d="m718 150 20-4 82 46-21 5z" fill="#151d35" stroke="#d58cff" stroke-width="1.5"/>
+      <path d="m732 134 20-4 82 46-21 5z" fill="#121e31" stroke="#57e6f2" stroke-width="1.5"/>
+      <path d="m746 118 20-4 82 46-21 5z" fill="#151d35" stroke="#d58cff" stroke-width="1.5"/>
+      <g stroke="#e5cb7d" stroke-width="2"><path d="m711 172 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7"/><path d="m739 140 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7m4-10 5 7"/><path d="m767 108 5 7m4-10 5 7m4-10 5 7m4-10 5 7"/></g>
+    </g>
+    <text x="770" y="258" class="tiny" transform="rotate(29 770 258)">DDR / CHANNEL A+B</text>
+  </g>
+  <!-- Capacitor bank, audio controller, and chipset -->
+  <g fill="#121d2b" stroke="#b0c6d4" stroke-width="1.5">
+    <path d="m380 261v20l16-3v-20z"/><ellipse cx="388" cy="258" rx="8" ry="5" fill="url(#steel)"/>
+    <path d="m397 285v17l15-3v-17z"/><ellipse cx="404" cy="282" rx="7" ry="4" fill="url(#steel)"/>
+    <path d="m665 275v19l16-3v-19z"/><ellipse cx="673" cy="272" rx="8" ry="5" fill="url(#steel)"/>
+  </g>
+  <path d="m746 286 77-16 57 32-78 16z" fill="#08101d" stroke="#66849a" stroke-width="2"/>
+  <path d="m761 286 48-10 33 19-49 10z" fill="#172536" stroke="#62e5f0"/>
+  <path d="m771 287 29-6 20 11-30 7z" fill="#0a1020" stroke="#a175ec"/>
+  <text x="796" y="333" text-anchor="middle" class="tiny">PCH / CHIPSET</text>
+  <!-- Reinforced PCIe x16 assembly rises as one part -->
+  <g>
+    <path d="m347 330 331-67 29 17-332 68z" fill="#030811" stroke="#506c81" stroke-width="2"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -58;0 -58;0 0;0 0" keyTimes="0;.12;.28;.62;.82;1" dur="6s" begin=".55s" repeatCount="indefinite"/>
+      <path d="m361 327 298-60 14 8-299 61z" fill="#161f2e" stroke="#b4ccd9"/>
+      <path d="m373 326 276-56 7 4-277 58z" fill="url(#gold)"/>
+      <path d="m391 319 5 10m15-13 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10m15-14 5 10" stroke="#463626" stroke-width="2"/>
+    </g>
+    <text x="487" y="359" class="tiny">PCI EXPRESS / X16</text>
+  </g>
+  <!-- Storage, fan, power and front-panel headers -->
+  <g fill="#111c2b" stroke="#91acbd" stroke-width="1.5">
+    <path d="m846 343 38-8 21 12-38 8z"/><path d="m854 342 22-5 12 7-22 5z" fill="#050a13" stroke="#58deed"/>
+    <path d="m891 334 38-8 21 12-38 8z"/><path d="m274 352 36-8 20 12-36 8z"/>
+    <path d="m590 390 45-10 25 14-46 10z"/><path d="m600 389 27-6 15 8-27 7z" fill="#080e18" stroke="#58deed"/>
+  </g>
+  <text x="853" y="379" class="tiny">SATA / STORAGE</text><text x="279" y="379" class="tiny">FAN / SYS</text>
+  <!-- On-board status LEDs -->
+  <circle cx="309" cy="316" r="13" fill="#2bddec" opacity=".2" filter="url(#glow)"/><circle cx="309" cy="316" r="4" fill="#66fff1" filter="url(#glow)" class="pulse"/>
+  <circle cx="927" cy="312" r="12" fill="#b956ff" opacity=".18" filter="url(#glow)"/><circle cx="927" cy="312" r="4" fill="#e384ff" filter="url(#glow)" class="pulseLate"/>
+</g>
+<!-- Product-style labels and animated diagnostic status -->
+<path d="M58 548H1142" stroke="#5edbed" stroke-opacity=".35"/>
+<text x="58" y="587" fill="#e9f8ff" font-family="monospace" font-size="19" letter-spacing="4">MOTHERBOARD / AUTONOMOUS SYSTEM</text>
+<text x="58" y="615" class="tiny">CPU SOCKET · DDR MEMORY · VRM POWER · PCIe EXPANSION · HIGH-SPEED I/O</text>
+<circle cx="65" cy="653" r="4" fill="#5df3d0" class="pulse"/><text x="79" y="657" class="tiny">ASSEMBLED</text>
+<text x="195" y="657" fill="#6d8199" font-family="monospace" font-size="11">→</text><text x="215" y="657" class="tiny">COMPONENTS LIFT / DIAGNOSTIC PAUSE / AUTO-RESEAT</text>
+<text x="1142" y="657" text-anchor="end" fill="#71e5f4" font-family="monospace" font-size="12" letter-spacing="1.5">GENTLE CONTINUOUS ROTATION</text>
+<path d="M58 699H1142" stroke="#7c9db8" stroke-opacity=".2"/>
+<text x="58" y="728" class="tiny">DESIGNED BY ANIRUDDHA DHIBAR / SYSTEMS IN MOTION</text><text x="1142" y="728" text-anchor="end" class="tiny">AD // 001</text>
 </svg>
