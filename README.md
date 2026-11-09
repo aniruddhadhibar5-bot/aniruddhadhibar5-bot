@@ -1,4 +1,6 @@
-<p align="center">
+> [OPEN THE INTERACTIVE 3D SYSTEMS LAB](https://aniruddhadhibar5-bot.github.io/aniruddhadhibar5-bot/) · Procedural motherboard visualization with automatic reassembly.
+>
+> <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:070B1A,35:111B3D,70:312E81,100:06B6D4&height=240&section=header&text=ANIRUDDHA%20DHIBAR&fontSize=48&fontColor=E6F1FF&animation=twinkling&fontAlignY=38&desc=DATA%20%2F%2F%20SYSTEMS%20%2F%2F%20INTELLIGENCE&descSize=16&descAlignY=60&descColor=67E8F9" width="100%" alt="Animated neon cyberpunk header">
 </p>
 
