@@ -1,3 +1,5 @@
+<p align="center"><a href="https://aniruddhadhibar5-bot.github.io/aniruddhadhibar5-bot/"><img src="https://raw.githubusercontent.com/aniruddhadhibar5-bot/aniruddhadhibar5-bot/main/assets/assets/motherboard-system.svg" width="100%" alt="Animated neon motherboard system"></a></p>
+<p align="center"><sub>ANIMATED MOTHERBOARD SYSTEM · Components separate, diagnose, and reassemble automatically · <a href="https://aniruddhadhibar5-bot.github.io/aniruddhadhibar5-bot/">Open interactive 3D lab</a></sub></p>
 > [OPEN THE INTERACTIVE 3D SYSTEMS LAB](https://aniruddhadhibar5-bot.github.io/aniruddhadhibar5-bot/) · Procedural motherboard visualization with automatic reassembly.
 >
 > <p align="center">
