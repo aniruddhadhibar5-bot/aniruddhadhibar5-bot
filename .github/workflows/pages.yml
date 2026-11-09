@@ -1,21 +1,26 @@
 name: Deploy 3D Systems Lab
 
+
 on:
   push:
     branches: [main]
     paths:
       - index.html
+      - 'src/**'
       - .github/workflows/pages.yml
   workflow_dispatch:
+
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+
 concurrency:
   group: github-pages
   cancel-in-progress: true
+
 
 jobs:
   deploy:
@@ -34,8 +39,3 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-# Source is configured as GitHub Actions in repository Pages settings.
