@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">Motherboard Systems // animated assembly</title><desc id="desc">A neon isometric motherboard with animated processor, memory, heatsinks and expansion card that lift into an exploded view and reassemble.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#050916"/><stop offset="1" stop-color="#101b3b"/></linearGradient>
+<linearGradient id="board" x2=".8" y2="1"><stop stop-color="#123d51"/><stop offset=".55" stop-color="#101e38"/><stop offset="1" stop-color="#080f20"/></linearGradient>
+<linearGradient id="metal" x2="1" y2="1"><stop stop-color="#b9f5ff"/><stop offset=".45" stop-color="#397f9f"/><stop offset="1" stop-color="#192d52"/></linearGradient>
+<linearGradient id="violet" x2="1"><stop stop-color="#34d8ee"/><stop offset=".52" stop-color="#7775ff"/><stop offset="1" stop-color="#d65bff"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#60d8ff" stroke-opacity=".07"/></pattern>
+<filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="760" rx="28" fill="url(#bg)"/><rect width="1200" height="760" rx="28" fill="url(#grid)"/>
+<g fill="#a9c8e8" font-family="monospace"><text x="64" y="72" font-size="18" letter-spacing="5">AD // SYSTEMS LAB</text><text x="1135" y="72" text-anchor="end" font-size="14" letter-spacing="3">FIG 01 · ATX / LIVE ASSEMBLY</text></g>
+<path d="M170 220 690 125 1030 315 500 438Z" fill="#030712" stroke="#263b68" stroke-width="3"/>
+<path d="m170 205 520-95 340 190-530 125z" fill="url(#board)" stroke="#4ccfff" stroke-opacity=".7" stroke-width="3"/>
+<path d="m205 211 480-88 312 174-490 108z" fill="none" stroke="#28c9e8" stroke-opacity=".24" stroke-width="2"/>
+<g fill="none" stroke="#22d3ee" stroke-opacity=".48" stroke-width="3"><path d="m220 260 155-28 45 26 90-17 55 31 130-24"/><path d="m260 330 155-29 54 30 126-24 45 26 170-31"/><path d="m590 170 20 65 65 38 9 49"/><path d="m360 190 36 61-12 65"/><path d="m840 245-40 68-112 20"/></g>
+<g fill="#a8d7e8"><circle cx="219" cy="207" r="8"/><circle cx="687" cy="119" r="8"/><circle cx="1021" cy="300" r="8"/><circle cx="501" cy="420" r="8"/></g>
+<!-- Components repeatedly lift into a separated diagnostic pose, then reseat. -->
+<g transform="translate(0 0)"><animateTransform attributeName="transform" type="translate" values="0 0;0 -58;0 -58;0 0" keyTimes="0;.22;.72;1" dur="8s" repeatCount="indefinite"/>
+<path d="m430 211 160-30 93 52-161 31z" fill="#050a18" stroke="#60e6ff" stroke-width="3" filter="url(#glow)"/>
+<path d="m447 211 140-26 77 44-141 27z" fill="url(#metal)"/><path d="m467 211 95-18 50 28-95 18z" fill="#10172c" stroke="#c5a5ff" stroke-width="4"/><text x="518" y="224" fill="#e6f4ff" font-family="monospace" font-size="13" transform="rotate(-10 518 224)">CORE / 01</text>
+</g>
+<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -82;0 -82;0 0" keyTimes="0;.22;.72;1" dur="8s" begin=".3s" repeatCount="indefinite"/>
+<path d="m700 173 25-5 72 40-24 5z" fill="url(#metal)" stroke="#91efff"/><path d="m710 154 25-5 72 40-24 5z" fill="url(#violet)" stroke="#d5b9ff"/><path d="m725 135 25-5 72 40-24 5z" fill="url(#metal)" stroke="#91efff"/>
+<g stroke="#d6f7ff" stroke-width="2"><path d="m707 175 8 8m5-11 8 8m5-11 8 8m5-11 8 8m5-11 8 8"/></g></g>
+<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -95;0 -95;0 0" keyTimes="0;.22;.72;1" dur="8s" begin=".6s" repeatCount="indefinite"/>
+<path d="m390 293 278-51 45 25-279 52z" fill="#050a18" stroke="#55d9f6" stroke-width="3"/><path d="m405 284 254-47 20 12-255 48z" fill="url(#violet)"/><path d="m455 298 11 22m20-28 11 22m20-28 11 22m20-28 11 22m20-28 11 22m20-28 11 22m20-28 11 22m20-28 11 22" stroke="#a9f3ff" stroke-width="3"/>
+</g>
+<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -50;0 -50;0 0" keyTimes="0;.22;.72;1" dur="8s" begin=".9s" repeatCount="indefinite"/>
+<path d="m315 264 44-8 66 37-45 9z" fill="#101a32" stroke="#617da9" stroke-width="3"/><path d="m324 264 20-4 54 30-20 4z" fill="url(#metal)"/><path d="m347 260 10-2 54 30-10 2z" fill="url(#metal)"/>
+<path d="m777 298 87-16 74 42-87 16z" fill="#111a31" stroke="#3dd9f2" stroke-width="3"/><path d="m796 298 52-10 49 28-52 10z" fill="url(#violet)"/>
+</g>
+<g fill="#67e8f9" filter="url(#glow)"><circle cx="259" cy="294" r="5"><animate attributeName="opacity" values=".25;1;.25" dur="1.7s" repeatCount="indefinite"/></circle><circle cx="915" cy="315" r="4"><animate attributeName="opacity" values="1;.3;1" dur="1.2s" repeatCount="indefinite"/></circle></g>
+<g fill="#d5e8ff" font-family="monospace" font-size="13" letter-spacing="2"><text x="170" y="510">COMPUTE / CPU + SOCKET</text><text x="530" y="560">MEMORY / DUAL CHANNEL</text><text x="800" y="500">EXPANSION / PCIe</text></g>
+<path d="M64 620H1136" stroke="#5bdcf4" stroke-opacity=".35"/><text x="64" y="670" fill="#67e8f9" font-family="monospace" font-size="16" letter-spacing="3">EXPLODED VIEW // AUTO-REASSEMBLY</text><text x="1136" y="670" text-anchor="end" fill="#a6bad2" font-family="monospace" font-size="14">DRAG INTO THE LIVE 3D LAB ↗</text>
+</svg>
