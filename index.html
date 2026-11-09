@@ -369,7 +369,7 @@
       cyanLight.intensity = 32 + Math.sin(seconds * 1.3) * 6;
       violetLight.intensity = 27 + Math.cos(seconds * 1.1) * 5;
       progressFill.style.width = Math.round((1 - eased) * 100) + '%';
-      stateLabel.textContent = eased > 0.985 ? 'LOCKED · 100%' : eased < 0.015 ? 'SEPARATED · 0%' : 'TRANSIT · ' + Math.round((1 - eased) * 100) + '%';
+      stateLabel.textContent = eased < 0.015 ? 'LOCKED · 100%' : eased > 0.985 ? 'SEPARATED · 0%' : 'TRANSIT · ' + Math.round((1 - eased) * 100) + '%';
       if (!isExploded && eased < 0.015) {
         stateNode.textContent = autoCycle ? 'AUTO CYCLE / READY' : 'ASSEMBLED / READY';
         if (statusNode.textContent !== 'SYSTEM NOMINAL // READY FOR INSPECTION' && !autoCycle) setStatus('SYSTEM NOMINAL // READY FOR INSPECTION');
