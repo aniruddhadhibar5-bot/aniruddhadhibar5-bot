@@ -84,6 +84,7 @@
   <script type="module">
     import * as THREE from 'three';
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
     const canvas = document.querySelector('#scene');
     const viewport = document.querySelector('.viewport');
@@ -105,6 +106,9 @@
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.15;
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+    pmremGenerator.dispose();
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -114,7 +118,7 @@
     controls.maxDistance = 23;
     controls.maxPolarAngle = Math.PI * 0.49;
     controls.autoRotate = !prefersReducedMotion;
-    controls.autoRotateSpeed = 0.38;
+    controls.autoRotateSpeed = 0.72;
     controls.target.set(0, 0, 0);
 
     scene.add(new THREE.HemisphereLight('#a9d8ff', '#111226', 2.1));
@@ -147,7 +151,8 @@
     board.add(assembly);
     const parts = [];
     const materials = {
-      pcb: new THREE.MeshStandardMaterial({ color: '#123d3c', metalness: 0.55, roughness: 0.42 }),
+      pcb: new THREE.MeshPhysicalMaterial({ color: '#123d3c', metalness: 0.48, roughness: 0.34, clearcoat: 0.72, clearcoatRoughness: 0.24 }),
+      copper: new THREE.MeshStandardMaterial({ color: '#bd8054', metalness: 0.88, roughness: 0.24 }),
       dark: new THREE.MeshStandardMaterial({ color: '#101a2d', metalness: 0.72, roughness: 0.3 }),
       metal: new THREE.MeshStandardMaterial({ color: '#8297ae', metalness: 0.88, roughness: 0.23 }),
       cyan: new THREE.MeshStandardMaterial({ color: '#21dfff', emissive: '#0584a5', emissiveIntensity: 1.8, metalness: 0.55, roughness: 0.25 }),
@@ -179,15 +184,43 @@
     pcb.castShadow = true;
     const edge = addMesh(assembly, new THREE.BoxGeometry(10.35, 0.12, 7.25), materials.dark, [0, -0.31, 0]);
     edge.position.y = -0.31;
-    for (let i = 0; i < 10; i += 1) {
-      const x = -4.55 + i * 0.96;
-      const lineMaterial = i % 2 ? materials.cyan : materials.gold;
-      const trace = new THREE.Mesh(new THREE.BoxGeometry(0.025, 0.012, 2.2 + (i % 3) * 0.45), lineMaterial);
-      trace.position.set(x, 0.008, -2.0 + (i % 4) * 0.55);
-      trace.rotation.y = (i % 2 ? 1 : -1) * 0.19;
-      trace.material = lineMaterial;
-      trace.castShadow = false;
-      assembly.add(trace);
+    const traceRoutes = [
+      [[-4.45, -2.65], [-3.35, -2.65], [-3.35, -1.72], [-1.52, -1.72]],
+      [[-4.4, -2.28], [-3.1, -2.28], [-3.1, -1.54], [-1.32, -1.54]],
+      [[-4.3, -1.92], [-2.9, -1.92], [-2.9, -1.36], [-1.15, -1.36]],
+      [[-4.35, -1.5], [-2.72, -1.5], [-2.72, -1.12], [-1.05, -1.12]],
+      [[-4.42, 0.55], [-3.2, 0.55], [-3.2, 0.15], [-1.48, 0.15]],
+      [[-4.45, 0.86], [-3.45, 0.86], [-3.45, 0.4], [-1.55, 0.4]],
+      [[-4.3, 1.18], [-3.6, 1.18], [-3.6, 0.7], [-1.42, 0.7]],
+      [[-4.45, 2.25], [-3.45, 2.25], [-3.45, 1.5], [-1.6, 1.5]],
+      [[-4.2, 2.62], [-3.2, 2.62], [-3.2, 1.84], [-1.44, 1.84]],
+      [[-2.95, 2.92], [-2.95, 2.25], [-1.96, 2.25], [-1.2, 1.92]],
+      [[1.1, -2.82], [2.4, -2.82], [2.4, -1.8], [4.25, -1.8]],
+      [[1.35, -2.48], [2.72, -2.48], [2.72, -1.52], [4.35, -1.52]],
+      [[1.45, -1.18], [2.75, -1.18], [2.75, -0.62], [4.38, -0.62]],
+      [[1.48, -0.82], [3.05, -0.82], [3.05, -0.25], [4.42, -0.25]],
+      [[1.55, 0.34], [2.8, 0.34], [2.8, 0.96], [4.42, 0.96]],
+      [[1.55, 0.68], [3.08, 0.68], [3.08, 1.3], [4.4, 1.3]],
+      [[1.55, 1.55], [2.6, 1.55], [2.6, 2.26], [4.25, 2.26]],
+      [[-0.1, 2.8], [-0.1, 2.38], [0.85, 2.38], [1.32, 1.95]],
+      [[0.35, -2.88], [0.35, -2.3], [1.05, -2.3], [1.4, -1.84]],
+      [[4.28, 2.58], [3.65, 2.58], [3.65, 1.92], [3.18, 1.56]]
+    ];
+    for (let routeIndex = 0; routeIndex < traceRoutes.length; routeIndex += 1) {
+      const route = traceRoutes[routeIndex];
+      for (let i = 1; i < route.length; i += 1) {
+        const [x1, z1] = route[i - 1];
+        const [x2, z2] = route[i];
+        const dx = x2 - x1;
+        const dz = z2 - z1;
+        const trace = new THREE.Mesh(new THREE.BoxGeometry(Math.hypot(dx, dz), 0.014, routeIndex % 4 === 0 ? 0.038 : 0.026), routeIndex % 4 === 0 ? materials.gold : materials.copper);
+        trace.position.set((x1 + x2) / 2, 0.018, (z1 + z2) / 2);
+        trace.rotation.y = Math.atan2(-dz, dx);
+        trace.castShadow = false;
+        assembly.add(trace);
+      }
+      const [viaX, viaZ] = route[route.length - 1];
+      addMesh(assembly, new THREE.CylinderGeometry(0.055, 0.055, 0.016, 16), materials.gold, [viaX, 0.014, viaZ]);
     }
     for (let i = 0; i < 4; i += 1) {
       const hole = addMesh(assembly, new THREE.CylinderGeometry(0.18, 0.18, 0.05, 32), materials.gold, [-4.65 + (i % 2) * 9.3, 0.02, -3.08 + Math.floor(i / 2) * 6.16]);
@@ -203,11 +236,13 @@
     addMesh(cpu, new THREE.BoxGeometry(1.15, 0.04, 1.1), materials.metal, [0, 0.16, 0]);
     const cooler = makePart('THERMAL MODULE', [-0.6, 0.86, -0.25], [-0.55, 3.8, -0.55], 2);
     addMesh(cooler, new THREE.CylinderGeometry(0.64, 0.72, 0.52, 48), materials.dark, [0, 0, 0]);
-    const fanRing = addMesh(cooler, new THREE.TorusGeometry(0.5, 0.055, 12, 48), materials.cyan, [0, 0.29, 0]);
+    const fanRotor = new THREE.Group();
+    cooler.add(fanRotor);
+    const fanRing = addMesh(fanRotor, new THREE.TorusGeometry(0.5, 0.055, 12, 48), materials.cyan, [0, 0.29, 0]);
     fanRing.rotation.x = Math.PI / 2;
-    addMesh(cooler, new THREE.CylinderGeometry(0.14, 0.14, 0.18, 24), materials.violet, [0, 0.34, 0]);
+    addMesh(fanRotor, new THREE.CylinderGeometry(0.14, 0.14, 0.18, 24), materials.violet, [0, 0.34, 0]);
     for (let i = 0; i < 8; i += 1) {
-      const blade = addMesh(cooler, new THREE.BoxGeometry(0.14, 0.035, 0.44), i % 2 ? materials.metal : materials.white, [0, 0.33, 0]);
+      const blade = addMesh(fanRotor, new THREE.BoxGeometry(0.14, 0.035, 0.44), i % 2 ? materials.metal : materials.white, [0, 0.33, 0]);
       blade.rotation.y = i * Math.PI / 4;
     }
 
@@ -289,7 +324,7 @@
     let targetExplosion = 0;
     let autoTimer = 0;
     let cycleTimer = 0;
-    let autoCycle = false;
+    let autoCycle = !prefersReducedMotion;
     let lastTime = 0;
     let isExploded = false;
 
@@ -300,15 +335,17 @@
     function startExplode() {
       window.clearTimeout(autoTimer);
       isExploded = true;
+      cycleTimer = 0;
       targetExplosion = 1;
       stateNode.textContent = 'EXPLODED / DIAGNOSTIC';
       setStatus('ASSEMBLY SEPARATING // AUTO-REASSEMBLY ARMED');
-      autoTimer = window.setTimeout(startReassemble, 5000);
+      autoTimer = window.setTimeout(startReassemble, 3200);
     }
 
     function startReassemble() {
       window.clearTimeout(autoTimer);
       isExploded = false;
+      cycleTimer = 0;
       targetExplosion = 0;
       stateNode.textContent = 'REASSEMBLING / AUTO-RECOVERY';
       setStatus('AUTO-RECOVERY // ALIGNING COMPONENTS');
@@ -350,9 +387,10 @@
       const seconds = time * 0.001;
       const delta = Math.min(0.05, (time - lastTime) * 0.001 || 0.016);
       lastTime = time;
-      const smoothing = 1 - Math.exp(-delta * 3.4);
+      const smoothing = 1 - Math.exp(-delta * 4.8);
       explosion += (targetExplosion - explosion) * smoothing;
       const eased = ease(Math.min(1, Math.max(0, explosion)));
+      fanRotor.rotation.y = seconds * 5.2;
       for (const part of parts) {
         const distance = part.name === 'THERMAL MODULE' ? 1.25 : 1;
         part.group.position.copy(part.origin).addScaledVector(part.offset, eased);
@@ -376,7 +414,7 @@
       }
       if (autoCycle) {
         cycleTimer += delta;
-        if (!isExploded && cycleTimer > 8) { cycleTimer = 0; startExplode(); }
+        if (!isExploded && cycleTimer > 4.5) { cycleTimer = 0; startExplode(); }
       }
       controls.update();
       renderer.render(scene, camera);
