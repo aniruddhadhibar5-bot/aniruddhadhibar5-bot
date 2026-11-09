@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 const box=(w,h,d,r=.05)=>new RoundedBoxGeometry(w,h,d,3,r);
 
+
 export function createBoard(){
  const root=new THREE.Group(), assembly=new THREE.Group(), parts=[], pulseMaterials=[];
  root.add(assembly);
@@ -33,5 +34,4 @@ export function createBoard(){
  const io=part('REAR I/O ARMOR',[-4.55,.4,-.1],[-1.8,.8,0],.8);add(io,box(.5,.8,2,.08),m.dark);for(let i=0;i<4;i++)add(io,box(.08,.19,.25,.025),i%2?m.violet:m.cyan,[.28,-.22+i*.15,-.6+(i%2)*.8]);
  for(let i=0;i<5;i++){const ledMat=new THREE.MeshStandardMaterial({color:'#63efff',emissive:'#09c8ff',emissiveIntensity:2,metalness:.35,roughness:.2});const led=add(assembly,new THREE.SphereGeometry(.055,24,16),ledMat,[-3.6+i*.32,.1,-.7]);led.userData.phase=i*.85;pulseMaterials.push(ledMat);}
  const power=part('24-PIN POWER',[4.1,.25,-2.5],[1.3,.9,-1.25],.8);add(power,box(.82,.54,.72,.09),m.ceramic);add(power,box(.58,.6,.48,.06),m.dark,[0,.3,0]);
- return {root,assembly,parts,pulseMaterials};
-}
+ return {root,assembly,parts,pulseMaterials,rotors:[rotor]};
