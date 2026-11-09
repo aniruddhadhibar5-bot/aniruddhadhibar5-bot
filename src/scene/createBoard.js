@@ -35,3 +35,5 @@ export function createBoard(){
  for(let i=0;i<5;i++){const ledMat=new THREE.MeshStandardMaterial({color:'#63efff',emissive:'#09c8ff',emissiveIntensity:2,metalness:.35,roughness:.2});const led=add(assembly,new THREE.SphereGeometry(.055,24,16),ledMat,[-3.6+i*.32,.1,-.7]);led.userData.phase=i*.85;pulseMaterials.push(ledMat);}
  const power=part('24-PIN POWER',[4.1,.25,-2.5],[1.3,.9,-1.25],.8);add(power,box(.82,.54,.72,.09),m.ceramic);add(power,box(.58,.6,.48,.06),m.dark,[0,.3,0]);
  return {root,assembly,parts,pulseMaterials,rotors:[rotor]};
+
+}
